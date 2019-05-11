@@ -82,7 +82,7 @@ window.onload = function()
     {
         let picture = new Image();
         
-        picture.src = Array[index];
+        picture.src = imgArray[index];
         
         displayImage.appendChild(picture);
         
