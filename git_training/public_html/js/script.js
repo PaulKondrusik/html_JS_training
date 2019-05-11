@@ -48,7 +48,7 @@ window.onload = function()
             this.style.borderWidth = "3px";
         }
         
-        if (klawisz === "A")
+        if (klawisz === "A") //wywalone narazie
             document.getElementById("fota1").style.display = "block";    
         else
             document.getElementById("fota1").style.display = "none";    
@@ -56,7 +56,7 @@ window.onload = function()
     
     // checkboxy
     
-    var imgArray = ['3562.jpg','3563.jpg', '3564.jpg', '3565.jpg', '3566.jpg', '3567.jpg'];
+    var imgArray = ['img/3562.jpg','img/3563.jpg', 'img/3564.jpg', 'img/3565.jpg', 'img/3566.jpg', 'img/3567.jpg'];
     var checkBoxy = document.getElementById("checkBoxy");
     var przycisk = document.getElementById("checkBoxy").przycisk;
     // var mainImg = document.getElementById("mainImg");
@@ -82,7 +82,7 @@ window.onload = function()
     {
         let picture = new Image();
         
-        picture.src = imgArray[index];
+        picture.src = Array[index];
         
         displayImage.appendChild(picture);
         
