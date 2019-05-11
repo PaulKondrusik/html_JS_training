@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>lekcja JS - obrazki</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/script.js" async></script>
+        
+        
+    </head>
+    <body>
+        
+        <!--formularz, wpisz A wyswietli obrazek -->
+        <form id="formularz">
+            <input type="text" name="liczby">
+            <input type="text" name="tekst">
+            <input type="submit" name="wyslij">
+        </form>
+        <div id="info1"></div>
+        <!-- <img id="fota1" src="3562.jpg" alt="fota1"> -->
+        
+        <!--checkbox -->
+        
+       <form id ="checkBoxy">
+            <label><input type="checkbox" name="fajneFoty" value="Atago" checked>Atago</label>
+            <label><input type="checkbox" name="fajneFoty" value="Atago_Takao">Atago+Takao</label>
+            <label><input type="checkbox" name="fajneFoty" value="Atago_Ahri">Atago+Ahri</label>
+            <label><input type="checkbox" name="fajneFoty" value="Red_Demoness">Red Demoness</label>
+            <input type="submit" value="Dodaj" name="przycisk">
+        </form>
+        <div id="displayImage"></div>
+        <!-- <img id="mainImg" src="3562.jpg" alt="fotka"> -->
+        
+       
+       
+        
+        <!-- regulamin -->
+        
+        <form id="regulamin">
+            <label><input type="radio" name="checkReg" value="false">TAK</label>
+            <label><input type="radio" name="checkReg" value="true" checked>NIE</label>
+            <input type="submit" value="Wyslij" name="RegAcc" disabled>
+        </form>
+        
+        <!-- rozwijane menu -->
+        
+        <form id="menu">
+            <select name="pics">
+                <option value="3562.jpg">Atago+Takao</option>
+                <option value="3563.jpg">Takao</option>
+                <option value="3564.jpg">Atago</option>
+                <option value="3567.jpg">ALL</option>
+            </select> 
+        </form>
+        <img src ="3562.jpg" alt="focia" id="focia">
+        
+        <!-- sprawdzanie hasla -->
+        
+        <form id="passCheck">
+            <input type="text" name="passwordSet">
+            <input type="submit" name="passButton" value="test">
+        </form>
+        
+        <div id="pass"></div>
+        
+        <!-- zegarek na stronie -->
+        
+        <div id="clockInfo"></div>
+        
+        <!-- losowe foty -->
+        
+        <input id="randomize" type="submit" value="Losuj" name="randomize">
+        <img id="randomPic" src="" alt="random_picture">
+        
+        <!-- slideshow -->
+       
+        <!-- metoda ze zmiana source w img-->
+        <img src="3562.jpg" alt="slideshow_pic" id="slideShow">
+
+        <!-- ladowanie obrazków i przejscie z animacja -->
+        <div id="slideShowDiv"></div>
+        
+    </body>
+</html>
