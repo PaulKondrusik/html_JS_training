@@ -216,10 +216,33 @@ window.onload = function()
 
 $("document").ready(function()
 {
-   $("input[value='Losuj']").click(function(){
-       alert("Czy na pewno tego chcesz ?");
-   });
-   $(":text").css("border", "2px solid black");
+    $("input[value='Losuj']").click(function(){
+        alert("Czy na pewno tego chcesz ?");
+    });
+        
+    // $(":text").css("border", "2px solid black");
+   
+    // naglowki z rozwijana trescia
+    
+    /*
+    $("div.naglowek span").each(function(lp)
+    {
+        $(this).addClass("gh"+lp);
+    });   
+     */
+    
+    $("div.ukryty_tekst").each(function(lp)
+    {
+        $(this).addClass("gh"+lp);
+    });
+    
+    $("div.naglowek span").click(function()
+    {
+        $("div."+$(this).attr("class")).toggle();
+    }).each(function(lp)
+    {
+        $(this).addClass("gh"+lp);
+    });
 });
 
 

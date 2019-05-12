@@ -58,3 +58,25 @@ and open the template in the editor.
     opacity: 1;
     transition: 2s;
 }
+.naglowek
+{
+    background-color: #bbb;
+    width: 700px;
+    font-family: verdana, geneva, arial;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.naglowek span
+{
+    font-style: italic;
+    cursor: pointer;
+    color: blue;
+}
+.ukryty_tekst
+{
+    background-color: #ddd;
+    width: 700px;
+    font-family: verdana, geneva, arial;
+    font-size: 15px;
+    display: none;
+}
