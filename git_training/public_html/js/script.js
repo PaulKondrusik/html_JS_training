@@ -238,11 +238,49 @@ $("document").ready(function()
     
     $("div.naglowek span").click(function()
     {
-        $("div."+$(this).attr("class")).toggle();
+        $("div."+$(this).attr("class")).toggle(300);
     }).each(function(lp)
     {
         $(this).addClass("gh"+lp);
     });
+    
+    // dynamiczne podpowiedzi z obrazkami
+    
+    var hint = $("<div class='photo_hint'>test</div>");
+    
+    hint.mouseleave(function() // doesn't need this 
+    {
+        $(this).hide("fast");
+    });
+    
+    $("body").prepend(hint);
+    
+    $("#photo_list tr:odd").addClass("pattern1");
+    $("#photo_list tr:even").addClass("pattern2");
+    
+    $("#photo_list tr").each(function(i)
+    {
+        $(this).attr("id", "nr"+i);
+    });
+    $("#hint_data div").each(function(i)
+    {
+        $(this).attr("class", "nr"+(i+1));
+    });
+    
+    $("#photo_list tr:not(#photo_list tr:first-child)").hover(function(evt)
+    {
+        $(this).addClass("backlight");
+        hint.css({
+            "left": evt.pageX+20,
+            "top": evt.pageY
+        }).html($("."+$(this).attr("id")).html()).show(200);
+        
+    },function(evt)
+    {
+        $(this).removeClass("backlight");
+        if(evt.relatedTarget.nodeName !== "DIV")
+            hint.hide();
+    });   
 });
 
 
