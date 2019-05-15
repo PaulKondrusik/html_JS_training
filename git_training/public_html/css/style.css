@@ -80,3 +80,40 @@ and open the template in the editor.
     font-size: 15px;
     display: none;
 }
+#photo_list
+{
+    float: right;
+    margin-right: 500px;
+}
+#photo_list, tr td, tr th
+{
+    padding: 10px; 
+}
+.pattern1
+{
+    background-color: #ABC;
+}
+.pattern2
+{
+    background-color: #CBA;
+}
+.backlight
+{
+    background-color: #DDD;  
+}
+.photo_hint
+{
+    background-color: #333;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    font-size: 10px;
+    color: #aaa;
+    padding: 15px 20px;
+    display: none;
+    opacity: 0.8;
+}
+#hint_data
+{
+    display: none;
+}
