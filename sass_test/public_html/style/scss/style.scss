@@ -1,0 +1,131 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 16 maj 2019, 14:11:59
+    Author     : magahiperkomp141
+*/
+
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "compass";
+
+$backgroundColor: violet;
+$textColor: white;
+
+%center
+{
+    margin: 0 auto;
+    display: block;
+}
+
+@function automaticContrast($backgroundColor, $textColor)
+{
+    @if lightness($backgroundColor) < 50%
+    {
+        @return lighten($textColor, 30%);
+    }
+    @else
+    {
+        @return darken($textColor, 40%);
+    }
+}
+
+h1
+{
+    width: 800px;
+    font-size: $sizeOfHeader - 20px;
+    color: greenyellow;
+    padding: 15px;
+    @extend %center;
+}
+
+nav 
+{
+    width: 800px;
+    @extend %center;
+    ul
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li
+    {
+        display: block;
+        float: left;
+        li
+        {
+            display: none;
+            float: none;
+        }
+        &:hover li
+        {
+            display: block;
+        }
+        ul
+        {
+            position: absolute;
+        }
+    }
+    
+    a
+    {
+        color: automaticContrast($backgroundColor, $textColor);
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        //@include horizontal-gradient(red, black);
+        background: linear-gradient(to right, $backgroundColor, blue);
+        &:hover
+        {
+            color: white;
+        }
+    } 
+}
+p
+{
+    width: 800px;
+    height: 30px;
+    clear: left;
+    background: linear-gradient(to right, yellow, green);
+    @extend %center;
+}  
+
+// matematyka + responsive
+
+@mixin generateRow($image-in-a-row, $margin-size)
+{
+    margin-right: $margin-size;
+    margin-bottom: $margin-size;
+    width: round((100%-($image-in-a-row*$margin-size))/$image-in-a-row);
+}
+
+.sass1_portrait
+{
+    @include generateRow(4, 1%);
+    float: left;
+    background-color: #cecece;
+    border: 1px solid black;
+    text-align: center;
+    padding: 2px;
+    box-sizing: border-box;
+    
+    @media (max-width: 640px)
+    {
+        @include generateRow(2, 2%);
+    }
+    @media (min-width: 641px) and (max-width: 768px)
+    {
+        @include generateRow(3, 1%);
+    }
+    
+    img
+    {
+        width: 100%;
+        height: image-height("9587.png");
+        object-fit: contain;
+    }
+}
