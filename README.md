@@ -4,4 +4,6 @@ training/playground file
 courses from Udemy:
 1. JavaScript od Podstaw do Eksperta by Arkadiusz Włodarczyk
 2. Kurs Tworzenia Stron WWW w HTML i CSS od Podstaw do Eksperta by Arkadiusz Włodarczyk
-3. You Don't Know JS by Kyle Simpson
+
+In progres:
+You Don't Know JS by Kyle Simpson
