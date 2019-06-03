@@ -44,7 +44,7 @@ h1
 
 nav 
 {
-    width: 800px;
+    width: 500px;
     @extend %center;
     ul
     {
@@ -87,7 +87,7 @@ nav
 }
 p
 {
-    width: 800px;
+    width: 500px;
     height: 30px;
     clear: left;
     background: linear-gradient(to right, yellow, green);
@@ -100,12 +100,17 @@ p
 {
     margin-right: $margin-size;
     margin-bottom: $margin-size;
-    width: round((100%-($image-in-a-row*$margin-size))/$image-in-a-row);
+    width: round(100% - ($image-in-a-row * $margin-size))/$image-in-a-row;
+    
+    /*&:nth-child(#{$image-in-a-row}n)
+    {
+        margin-right: 0;
+    }*/
 }
 
 .sass1_portrait
 {
-    @include generateRow(4, 1%);
+    // @include generateRow(4, 1%);
     float: left;
     background-color: #cecece;
     border: 1px solid black;
@@ -113,13 +118,23 @@ p
     padding: 2px;
     box-sizing: border-box;
     
+    .sass1_description
+    {
+        display: inline-block;
+        color: #555;
+    }
+    
     @media (max-width: 640px)
     {
         @include generateRow(2, 2%);
     }
-    @media (min-width: 641px) and (max-width: 768px)
+    @media (min-width: 641px) and (max-width: 1278px)
     {
-        @include generateRow(3, 1%);
+        @include generateRow(3, 2%);
+    }
+    @media (min-width: 1279px)
+    {
+        @include generateRow(4, 2%);
     }
     
     img
@@ -128,4 +143,48 @@ p
         height: image-height("9587.png");
         object-fit: contain;
     }
+}
+
+// generowanie boxów
+
+%small-box-size
+{
+    width: 100px;
+    height: 100px;
+}
+
+
+@mixin small-box($color)
+{
+    .small-box-#{$color}
+    {
+        @extend %small-box-size;
+        background-color: $color;
+        display: inline-block;
+    }
+}
+
+@include small-box(red);
+@include small-box(green);
+
+// petla @for + @each (rozmiar czcionki headerow) 
+
+/*@for $i from 7 to 0
+{
+    h#{$i}
+    {
+        font-size: 60px - $i * 5;
+    }
+}*/
+
+$header-list: h4 h5 h6 h7;
+$i: 0;
+
+@each $current-header in $header-list
+{
+    #{$current-header}
+    {
+        font-size: 60px - $i * 5;
+    }
+    $i: $i + 1;
 }
